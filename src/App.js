@@ -1,9 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import Cart from './pages/cart';
+import Login from './pages/login';
+import Homepage from './pages/homepage';
+import Products from './pages/products';
+
+
 
 function App() {
   return (
     <div>
-      <h1> App.js </h1>
+      <Router>
+        <Switch>
+          <Route path='/' exact component={Homepage} />
+          <Route path='/login' component={Login} />
+          <Route path='/cart' component={Cart} />
+          <Route path='/products' component={Products} />
+
+        </Switch>
+      </Router>
     </div>
   );
 }
