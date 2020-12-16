@@ -4,6 +4,7 @@ import Cart from './pages/cart';
 import Login from './pages/login';
 import Homepage from './pages/homepage';
 import Products from './pages/products';
+import Navbar from './components/navbar';
 
 
 
@@ -11,6 +12,7 @@ function App() {
   return (
     <div>
       <Router>
+        <Navbar />
         <Switch>
           <Route path='/' exact component={Homepage} />
           <Route path='/login' component={Login} />
