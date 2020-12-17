@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Cart from './pages/cart';
 import Login from './pages/login';
 import Homepage from './pages/homepage';
@@ -7,8 +7,8 @@ import Products from './pages/products';
 import Navbar from './components/navbar';
 
 
-
 function App() {
+
   return (
     <div>
       <Router>
