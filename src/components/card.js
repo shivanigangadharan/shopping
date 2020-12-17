@@ -22,7 +22,6 @@ const Main = styled.div`
     width: 200px;
     padding: 3%;
     box-shadow: 1px 1px 5px 1px lightgrey;
-
 `
 function Card(props) {
     const title = props.title;
