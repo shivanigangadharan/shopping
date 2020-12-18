@@ -11,6 +11,7 @@ const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 
+
 function Login(props) {
     const {
         user,
@@ -24,13 +25,21 @@ function Login(props) {
             <br /><br />
             {
                 user
-                    ? <p>Hello, {user.displayName}</p>
+                    ?
+                    <p>Hello, {user.displayName}</p>
+
                     : <p>Please sign in.</p>
             }
+
+
+
             {
                 user
                     ? <button onClick={signOut}>Sign out</button>
-                    : <button onClick={signInWithGoogle}>Sign in with Google</button>
+                    :
+                    <div>
+                        <button onClick={signInWithGoogle}>Sign in with Google</button>
+                    </div>
             }
             <br /><br /><br />
             <button>
