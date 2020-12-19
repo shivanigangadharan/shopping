@@ -17,16 +17,19 @@ const Parent = styled.div`
 function Products() {
     const [data, setData] = useState('None');
     const [childprops, setChildprops] = useState();
-
+    const [idlist, setIdlist] = useState([]);
     // to get props from child - card (to get which is to be added)
     const callbackFunction = (childData) => {
         setChildprops({
             id: childData.id,
         });
+        setIdlist(idlist.concat(childData.id));
+        console.log('now id list = ', idlist);
     }
     function handleViewCart() {
-        console.log('child = ', childprops);
-        console.log('child = ', childprops);
+        // console.log('child = ', childprops);
+        // console.log('child = ', childprops);
+        console.log('id list = ', idlist);
 
     }
 
@@ -49,6 +52,7 @@ function Products() {
                             title={data[i].title}
                             image={data[i].image}
                             price={data[i].price}
+                            id={data[i].id}
                             description={data[i].description}
                         />
                     )
@@ -61,8 +65,20 @@ function Products() {
 
                 {/* only show if user is authenticated */}
 
-                <Link to="/cart">
-                    <Button onClick={handleViewCart} text='View Cart' color='#611a1a' />
+                <Link
+                    // to="/cart"
+                    onClick={handleViewCart} to={
+                        {
+                            pathname: '/cart',
+                            params: {
+                                idlist: { idlist }
+                            }
+                        }
+                    }
+                >
+                    <Button
+                        // onClick={handleViewCart}
+                        text='View Cart' color='#611a1a' />
                 </Link>
             </div >
         </Main >

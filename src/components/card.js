@@ -43,10 +43,11 @@ function Card(props) {
     }
     )
     function handleAdd() {
+        // setAddedItems(addedItems.concat(props.id));
         props.parentCallback({
             id: id
         });
-
+        console.log('id passed = ', id);
         if (add == 'Add to cart') {
             setAdd('Added');
             setBg('green');
