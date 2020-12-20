@@ -8,7 +8,11 @@ import user from './login';
 const Main = styled.div`
     margin: 5%;
 `
-
+// const Btn = styled.button`
+//     position: fixed;
+//     bottom: 20px;
+//     right: 20px;
+// `
 const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 28%)
@@ -65,29 +69,48 @@ function Products() {
                     )
                 })}
             </Container>
-            <div style={{ 'display': 'flex' }}>
-                <Link to="/">
+            {/* <div style={{ 'display': 'flex' }}> */}
+            {/* <Link to="/">
                     <Button text='Back to Home' color='#fc7b03' />
-                </Link>
+                </Link> */}
 
-                {/* only show if user is authenticated */}
+            {/* only show if user is authenticated */}
 
-                <Link
-                    // to="/cart"
-                    onClick={handleViewCart} to={
-                        {
-                            pathname: '/cart',
-                            params: {
-                                itemList: itemList
-                            }
+            <Link
+                // to="/cart"
+                onClick={handleViewCart} to={
+                    {
+                        pathname: '/cart',
+                        params: {
+                            itemList: itemList
                         }
                     }
-                >
-                    <Button
+                }
+            >
+                {/* <Button
+                        style={{
+                            'position': 'fixed',
+                            'bottom': '20px',
+                            'right': '10px'
+                        }}
                         // onClick={handleViewCart}
                         text='View Cart' color='#611a1a' />
-                </Link>
-            </div >
+                         */}
+
+                <button class="btn waves-effect waves-light"
+                    style={{
+                        'position': 'fixed',
+                        'bottom': '20px',
+                        'right': '20px',
+                    }}
+                    type="submit" name="action">
+                    View Cart
+                    <i class="material-icons right">
+                        send
+                    </i>
+                </button>
+            </Link>
+            {/* </div > */}
         </Main >
     )
 }

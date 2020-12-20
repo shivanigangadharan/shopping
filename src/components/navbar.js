@@ -1,29 +1,50 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import shop from '../shop.png';
 
-const Main = styled.div`
 
-    width: 100%;
-    padding: 1%;
-    padding-left: 4%;
-    // box-shadow: 1px 1px 4px 1px lightgrey;
-    display: flex;
-    flex-direction: row;
+const Nav = styled.nav`
+    padding-left: 30px;
 `
-const Img = styled.img`
-    width: 70px;
-    height: 70px;
-    margin-right: 2%;
-    margin-top: 1%;
-`
+// const Img = styled.img`
+//     width: 70px;
+//     height: 70px;
+//     margin-right: 2%;
+//     margin-top: 1%;
+// `
 function Navbar() {
     return (
-        <Main>
-            <Img src={shop} />
-            <h1> <b> Shopping </b> </h1>
-        </Main>
+        <div>
+            <Nav className="navbar-fixed">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo" style={{ 'color': 'white', 'outline': 'none' }} >ShoppingGo</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li> <Link to="/products">
+                            <li><a href="sass.html" style={{ 'color': 'white', 'outline': 'none' }}> View our products</a></li>
+                        </Link>
+                        </li>
+                        <li>
+                            <Link style={{ 'color': 'white', 'outline': 'none' }} to="/login">
+                                <li><a class="waves-effect waves-light btn" style={{ 'color': 'white', 'outline': 'none' }}>Login</a></li>
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </Nav>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li><Link to="/products">
+                    <li><a href="sass.html">View our products</a></li>
+                </Link></li>
+                <li>
+                    <Link to="/login">
+                        <li><a class="waves-effect waves-light btn">Login</a></li>
+                    </Link>
+                </li>
+            </ul>
+        </div>
     )
 }
 

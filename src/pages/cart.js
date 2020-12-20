@@ -68,7 +68,7 @@ function Cart(props) {
         else {
             return (
                 <div>
-                    <h1> No products in cart as of now. </h1>
+                    <h4> No products in cart as of now. </h4>
                 </div>
             )
         }
