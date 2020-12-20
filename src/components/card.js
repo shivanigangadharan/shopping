@@ -40,12 +40,19 @@ function Card(props) {
         setImage(props.image);
         setId(props.id);
         setPrice(props.price);
+        if (props.showadd == 'Yes') {
+            setShowadd('visible')
+        }
+        else if (props.showadd == 'No') {
+            setShowadd('hidden');
+        }
     }
     )
     function handleAdd() {
         // setAddedItems(addedItems.concat(props.id));
         props.parentCallback({
-            id: id
+            id: id,
+            title: title
         });
         console.log('id passed = ', id);
         if (add == 'Add to cart') {
@@ -68,6 +75,8 @@ function Card(props) {
     const [bg, setBg] = useState('orange');
     const [color, setColor] = useState('black');
     const [addedItems, setAddedItems] = useState([]);
+    const [showadd, setShowadd] = useState();
+
     // const description = props.description;
     return (
         <Main>
@@ -79,14 +88,16 @@ function Card(props) {
             <Btn
                 style={{
                     'background': bg,
-                    'color': color
+                    'color': color,
+                    'visibility': showadd
                 }}
 
                 onClick={handleAdd} to={
                     {
                         pathname: '/products',
                         params: {
-                            id: { id }
+                            id: { id },
+                            title: { title }
                         }
                     }
                 }

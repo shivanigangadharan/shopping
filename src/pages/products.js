@@ -17,20 +17,26 @@ const Parent = styled.div`
 function Products() {
     const [data, setData] = useState('None');
     const [childprops, setChildprops] = useState();
-    const [idlist, setIdlist] = useState([]);
+    const [itemList, setItemlist] = useState([]);
     // to get props from child - card (to get which is to be added)
     const callbackFunction = (childData) => {
-        setChildprops({
-            id: childData.id,
-        });
-        setIdlist(idlist.concat(childData.id));
-        console.log('now id list = ', idlist);
+        // setChildprops({
+        //     id: childData.id,
+        //     title: childData.title
+        // });
+        setItemlist(
+            itemList.concat(childData)
+        );
+        console.log('now id list = ', itemList);
     }
     function handleViewCart() {
         // console.log('child = ', childprops);
         // console.log('child = ', childprops);
-        console.log('id list = ', idlist);
-
+        // setItemlist(
+        //     itemList.concat(childprops)
+        // );
+        console.log('FINAL PASSING TO CART id list = ', itemList);
+        // console.log('childprops = ', childprops);
     }
 
     useEffect(() => {
@@ -52,6 +58,7 @@ function Products() {
                             title={data[i].title}
                             image={data[i].image}
                             price={data[i].price}
+                            showadd='Yes'
                             id={data[i].id}
                             description={data[i].description}
                         />
@@ -71,7 +78,7 @@ function Products() {
                         {
                             pathname: '/cart',
                             params: {
-                                idlist: { idlist }
+                                itemList: itemList
                             }
                         }
                     }
