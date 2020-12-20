@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import withFirebaseAuth from 'react-with-firebase-auth'
 import firebase from 'firebase/app';
@@ -21,17 +21,41 @@ const Main = styled.div`
     text-align: center;
     width: 500px;
 `
-const GSignin = styled.button`
+const Btn = styled.button`
+    background: white;
+    border: 1px solid lightgrey;
+    padding: 1.5%;
+    margin-top: 20px;
+    &:hover{
+        cursor: pointer;
+    }
+    `
 
-`
 
 function Login(props) {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('email = ', email);
+        console.log('pwd = ', password);
+        const signup = (email, password) => {
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.error(err)
+                })
+        }
+    }
+
     const {
         user,
         signOut,
         signInWithGoogle,
 
     } = props;
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
     return (
         <div><center>
             <Main>
@@ -40,22 +64,41 @@ function Login(props) {
                         ?
                         <p>Welcome, {user.displayName}</p>
 
-                        : <p>Please sign in.</p>
+                        : <div>
+                            <p>Please sign in.</p>
+                            <form>
+                                <Input type="email"
+                                    onChange={e => { setEmail(e.target.value) }}
+                                />
+                                <Input type="password"
+                                    onChange={e => { setPassword(e.target.value) }}
+                                />
+                                <br /><br />
+                                <Input onClick={handleSubmit} type="submit" value="Login" />
+                            </form>
+                        </div>
+
                 }
 
 
 
                 {
                     user
-                        ? <button onClick={signOut}>Sign out</button>
+                        ? <Btn onClick={signOut}>Sign out</Btn>
                         :
                         <div>
-                            <GSignin onClick={signInWithGoogle}>Sign in with Google</GSignin>
+
+                            <Btn onClick={signInWithGoogle}>
+                                <img width="15px"
+                                    style={{ 'marginRight': '10px' }}
+                                    src="https://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png" />
+                                Sign in with Google</Btn>
                         </div>
                 }
-                <button>
+                <br />
+                <Btn>
                     <Link to="/"> Back to Home</Link>
-                </button>
+                </Btn>
 
             </Main></center></div>
     )
