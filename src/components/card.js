@@ -50,9 +50,15 @@ function Card(props) {
     )
     function handleAdd() {
         // setAddedItems(addedItems.concat(props.id));
+        // if(add='Add to cart'){
+
+        // }
         props.parentCallback({
             id: id,
-            title: title
+            title: title,
+            image: image,
+            price: price,
+            // addstatus: addstatus
         });
         console.log('id passed = ', id);
         if (add == 'Add to cart') {
@@ -60,11 +66,11 @@ function Card(props) {
             setBg('green');
             setColor('white');
         }
-        else {
-            setAdd('Add to cart');
-            setBg('orange');
-            setColor('black');
-        }
+        // else {
+        //     setAdd('Add to cart');
+        //     setBg('orange');
+        //     setColor('black');
+        // }
     }
 
     const [title, setTitle] = useState();

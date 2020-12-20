@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const Btn = styled.button`
     border-radius: 100px;
-    border: 2px solid white;
+    border: 3px solid white;
     box-shadow: 1px 1px 7px 3px lightgrey;
-    padding: 3%;
-    font-size: 115%;
+    padding: 10px;
+    font-size: 100%;
     width: 150px;
     outline: none;
     margin-right: 35px;
@@ -14,7 +14,7 @@ const Btn = styled.button`
     margin-top: 5%;
     &:hover{
         opacity: 0.7;
-        transition-duration: 0.5s;
+        transition-duration: 0.4s;
     }
 `
 

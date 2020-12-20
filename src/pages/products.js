@@ -9,7 +9,7 @@ const Main = styled.div`
     margin: 5%;
 `
 
-const Parent = styled.div`
+const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 28%)
 `
@@ -49,7 +49,7 @@ function Products() {
         <Main>
             {/* <h1> Products </h1> */}
 
-            <Parent>
+            <Container>
 
                 {Object.keys(data).map((e, i) => {
                     return (
@@ -64,7 +64,7 @@ function Products() {
                         />
                     )
                 })}
-            </Parent>
+            </Container>
             <div style={{ 'display': 'flex' }}>
                 <Link to="/">
                     <Button text='Back to Home' color='#fc7b03' />
