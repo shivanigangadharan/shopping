@@ -1,2 +1,2 @@
 # shopping
-Assignment for GoBony
+Assignment - E-commerce website
