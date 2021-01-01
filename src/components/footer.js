@@ -15,7 +15,7 @@ function Footer() {
                             <h5 class="white-text">Contact Us</h5>
                             <p class="grey-text text-lighten-4">H-56, Phase-III, Ashok Vihar, Delhi-11035</p>
                             <p class="grey-text text-lighten-4"> admin_shopping.contact@gmail.com </p>
-                            <p class="grey-text text-lighten-4"> 98XXXXXX56 </p>
+                            <p class="grey-text text-lighten-4"> 98XX789X56 </p>
 
                         </div>
                         <div class="col l4 offset-l2 s12">

@@ -12,6 +12,9 @@ const ImgCard = styled(Card)`
     margin: 0 auto;
 
 `
+const Box = styled.div`
+    border: 3px solid red;
+`
 const Flex = styled.div`
     display: flex;
     align-content: center;
@@ -29,38 +32,38 @@ function Homepage() {
         textAlign: 'center',
         border: '4px solid white',
         boxShadow: '1px 1px 5px 2px lightgrey',
-
-        // background: '#364d79',
     };
     const numarr = [1, 2, 3];
 
     return (
         <div>
             <center>
-                <Carousel autoplay>
-                    <div>
-                        <img
-                            style={contentStyle}
-                            src="https://www.finplus.co.in/wp-content/uploads/2017/05/Sell-products-online-why-should-I-start-selling-online.jpg" />
-                    </div>
-                    <div>
-                        <img
-                            style={contentStyle}
-                            src="https://www.finplus.co.in/wp-content/uploads/2017/05/Sell-products-online-why-should-I-start-selling-online-1.jpg" />
-                    </div>
-                    <div>
-                        <img
-                            style={contentStyle}
-                            src="https://d2hhgs6eoqpuyl.cloudfront.net/uploads/blog_image/file/796/online-shopping-ecommerce-ss-1920.png" />
+                <Box>
+                    <Carousel autoplay>
+                        <div>
+                            <img
+                                style={contentStyle}
+                                src="https://www.finplus.co.in/wp-content/uploads/2017/05/Sell-products-online-why-should-I-start-selling-online.jpg" />
+                        </div>
+                        <div>
+                            <img
+                                style={contentStyle}
+                                src="https://www.finplus.co.in/wp-content/uploads/2017/05/Sell-products-online-why-should-I-start-selling-online-1.jpg" />
+                        </div>
+                        <div>
+                            <img
+                                style={contentStyle}
+                                src="https://d2hhgs6eoqpuyl.cloudfront.net/uploads/blog_image/file/796/online-shopping-ecommerce-ss-1920.png" />
 
-                    </div>
+                        </div>
 
-                    <div>
-                        <img
-                            style={contentStyle}
-                            src="https://trak.in/wp-content/uploads/2018/11/Ecommerce-Online-To-Offline.jpg" />
-                    </div>
-                </Carousel>
+                        <div>
+                            <img
+                                style={contentStyle}
+                                src="https://trak.in/wp-content/uploads/2018/11/Ecommerce-Online-To-Offline.jpg" />
+                        </div>
+                    </Carousel>
+                </Box>
 
                 <Flex>
 
