@@ -7,12 +7,7 @@ import shop from '../shop.png';
 const Nav = styled.nav`
     padding-left: 30px;
 `
-// const Img = styled.img`
-//     width: 70px;
-//     height: 70px;
-//     margin-right: 2%;
-//     margin-top: 1%;
-// `
+
 function Navbar() {
     return (
         <div>
